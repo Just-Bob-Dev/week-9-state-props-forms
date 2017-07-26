@@ -11,7 +11,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <PlayListForm />
+        <div className="container-fluid row">
+          <PlayListForm className="col-md-6"/>
+          <PlayList className="col-md-6" />
+        </div>
       </div>
     );
   }
