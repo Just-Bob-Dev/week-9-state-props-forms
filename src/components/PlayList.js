@@ -6,6 +6,10 @@ export default class PlayList extends Component {
     super(props);
 
     this.fetchData = this.fetchData.bind(this);
+
+    this.state = {
+      songs : [],
+    };
   }
 
   componentDidMount() {
@@ -15,7 +19,6 @@ export default class PlayList extends Component {
           this.setState({songs: data});
           console.log("state", this.state.songs);
         })
-
   }
 
   fetchData(e) {
@@ -24,7 +27,18 @@ export default class PlayList extends Component {
       return results.json();
     }).then(data => {
       this.setState({songs: data});
+      console.log(this.state.songs);
     })
   }
 
+  render() {
+    return(
+      <div className="col-md-6">
+        <form onSubmit={this.fetchData}>
+          <button type='submit' className="btn btn-success">Update</button>
+        </form>
+        <PlayListItem songs={this.state.songs}/>
+      </div>
+    )
+  }
 }
