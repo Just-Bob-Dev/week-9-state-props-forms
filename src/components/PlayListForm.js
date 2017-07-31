@@ -58,7 +58,7 @@ export default class PlayListForm extends Component {
   render() {
     return (
       <div className="col-md-6">
-        <div className="card">
+        <div className="card form-card">
           <div className="form_container">
             <form onSubmit={this.addToList}>
               <div className="form-group">
@@ -81,7 +81,7 @@ export default class PlayListForm extends Component {
             </form>
           </div>
         </div>
-      </div> 
+      </div>
     );
   }
 }

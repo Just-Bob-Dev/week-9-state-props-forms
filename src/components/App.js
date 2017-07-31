@@ -12,6 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container-fluid row">
+          <NavBar className="col-md-12" />
           <PlayListForm className="col-md-6"/>
           <PlayList className="col-md-6" />
         </div>
